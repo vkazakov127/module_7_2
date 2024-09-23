@@ -10,7 +10,7 @@ def custom_write(file_name: str, strings: list):
         for line in strings:
             file_position = file.tell()  # Позиция строки в файле, в байтах
             file.write(line+'\n')  # Записываем в файл
-            line_number = strings.index(line)  # Номер строки в списке "strings"
+            line_number = strings.index(line) + 1  # Номер строки в списке "strings"
             # Записываем в "Словарь на выход"
             strings_positions[(line_number, file_position)] = line
         file.write('--------- The File End ----------')
